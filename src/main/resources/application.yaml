@@ -4,3 +4,5 @@ spring:
       database: myApp
       host: localhost
       port: 27017
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
