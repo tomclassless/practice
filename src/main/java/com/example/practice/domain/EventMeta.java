@@ -1,5 +1,6 @@
 package com.example.practice.domain;
 
+import com.example.practice.event.Event;
 import java.time.Instant;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,20 +11,19 @@ import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document("events")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Builder
-public class Event<T> {
+public class EventMeta {
 
     @Id
     private String id;
-    private String eventType;
-    private Instant createTime;
     private String eventName = "default";
-    private T eventData;
+    private Event eventData;
+    private Instant createTime;
 
 }
